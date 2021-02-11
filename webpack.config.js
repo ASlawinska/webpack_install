@@ -4,6 +4,9 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+const webpack = require("webpack");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: `./src/index.js`,
@@ -33,7 +36,18 @@ plugins: [
                 proxy: 'http://localhost:3000'
                 }, {
                 reload: false
-                })
+                }),
+        new webpack.LoaderOptionsPlugin({
+                options: {
+                postcss: [
+                autoprefixer()
+                ]
+                }
+                }),
+        new CopyWebpackPlugin([{
+                from: './src/assets',
+                to: './dest/assets'
+                }]),
         ],
     module: {
         rules: [{
@@ -43,7 +57,8 @@ plugins: [
             //"style-loader", 
             MiniCssExtractPlugin.loader,
             "css-loader", 
-            "sass-loader"
+            "sass-loader",
+            "postcss-loader"
         ]
         },
         {
