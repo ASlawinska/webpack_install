@@ -10,12 +10,32 @@ devServer:{
     port: 3000,
     watchContentBase: true
     },
-module: {
-    rules: [{
-    test: /\.css$/, //what loaders should be applied
-    use: [{loader: "style-loader/url"},
-    {loader: "file-loader",
-    options: {name: "[name].[ext]"}}] //what loaders we want to use
-    }]
-    }
-}
+    module: {
+        rules: [{
+        test: /\.scss$/,
+
+        use: [
+            "style-loader", "css-loader", "sass-loader"
+        ]
+        },
+        {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }
+        },
+        {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: {
+            loader: "file-loader",
+            options: {
+            name: "[name].[ext]"
+            }
+            }
+        }
+        ]
+}}
