@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
     entry: `./src/index.js`,
@@ -26,6 +27,13 @@ plugins: [
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/
             }),
+        new BrowserSyncPlugin({
+                host: 'localhost',
+                port: 3100,
+                proxy: 'http://localhost:3000'
+                }, {
+                reload: false
+                })
         ],
     module: {
         rules: [{
