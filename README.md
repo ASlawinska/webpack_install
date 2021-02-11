@@ -1,7 +1,7 @@
-#Repository contains the  node.js package installation
-##NAME: webpack_install
+# Repository contains the  node.js package installation
+## NAME: webpack_install
 
-##General info
+## General info
 Repository contains all files, lodader, and configuration to work as front-end developer. 
 
 ## Use packages
