@@ -7,7 +7,7 @@ Repository contains all files, lodader, and configuration to work as front-end d
 ## Use packages
 * webpack@4.29.6
 * webpack-cli@3.3.0 
-* webpack-dev-server@3.7.1 // aytomatically refresh
+* webpack-dev-server@3.7.1 // automatically refresh
 * css-loaders 
   * css-loadres@2.1.1
   * style-loadres@0.23.1
