@@ -46,7 +46,7 @@ plugins: [
                 }),
         new CopyWebpackPlugin([{
                 from: './src/assets',
-                to: './dest/assets'
+                to: './dist/assets'
                 }]),
         ],
     module: {
