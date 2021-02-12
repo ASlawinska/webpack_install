@@ -29,3 +29,7 @@ Repository contains all files, lodader, and configuration to work as front-end d
 * autoprefixer@9.7.4
 * postcss-loader@3.0.0
 * copy-webpack-plugin@5.1.1
+
+#Instruction
+Download all zip file. Next install webpack // npm install webpack. 
+Edited file in folder src. <- new project 
